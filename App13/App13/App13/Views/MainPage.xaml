@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:local="clr-namespace:App13;assembly=App13"
+  xmlns:services="clr-namespace:App13.Services;assembly=App13"
+  x:Class="App13.Views.MainPage"
+  BindingContext="{x:Static local:ViewModelLocator.Main}">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="0, 20, 0, 0" />
+  </ContentPage.Padding>
+  <ContentPage.Behaviors>
+    <services:DialogBehavior />
+  </ContentPage.Behaviors>
+  <StackLayout>
+    <Label Text="{Binding Label.Value}" />
+    <Button Text="こんにちは" Command="{Binding AlertCommand}" />
+  </StackLayout>
+</ContentPage>
